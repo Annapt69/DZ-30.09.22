@@ -7,14 +7,13 @@
 */
 
 Console.WriteLine("Введите число");
-string userNumber = Console.ReadLine();
-char[] array = userNumber.ToCharArray();
+int userNumber = Convert.ToInt32(Console.ReadLine());
+int[] array = userNumber.ToString().Select(t=>int.Parse(t.ToString())).ToArray();
 int sum = 0;
-Console.WriteLine($"{array}");
 
 for (int i = 0; i < array.Length; i++)
 {
     sum = array[i] + sum;
 }
 
-Console.WriteLine($"{sum}");
+Console.WriteLine($"Сумма цифр введенного числа {sum}");
